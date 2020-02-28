@@ -123,13 +123,5 @@ def main(args):
         test(model, device, test_loader, criterion)
 
 if __name__ == "__main__":
-    # args = {
-    #     'batch_size': 50, 
-    #     'lr_rate': 0.01, 
-    #     'epochs': 100, 
-    #     'input_dim': 13, 
-    #     'output_dim': 2, 
-    #     'test_size': 0.2
-    # }
     args = parse_arguments()
     main(args)
