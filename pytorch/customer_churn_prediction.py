@@ -22,7 +22,7 @@ def parse_arguments():
                         help='input batch size for training (default: 64)')
     parser.add_argument('--epochs', type=int, default=14, metavar='N',
                         help='number of epochs to train (default: 14)')
-    parser.add_argument('--lr', type=float, default=1.0, metavar='LR',
+    parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                         help='learning rate (default: 1.0)')
     parser.add_argument('--no-cuda', action='store_true', default=False,
                         help='disables CUDA training')
@@ -58,7 +58,6 @@ def train(model, epoch, train_loader, loss_fn, optimizer):
     for batch_idx, (data, labels) in enumerate(train_loader):        
         # Forward pass: Compute predicted y by passing x to the model
         outputs = model(data)
-        
         # Compute loss
         loss = loss_fn(outputs, labels)
         
